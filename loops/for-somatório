@@ -1,0 +1,7 @@
+vendas = [250, 750, 1350, 475, 125]
+
+total = 0
+
+for i in vendas:
+    total += i
+    print(total)

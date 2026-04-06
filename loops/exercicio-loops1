@@ -1,0 +1,18 @@
+fatura = []
+total = 0
+
+while True:
+    produto = input("Nome do produto: ")
+    preco = float(input("Preço: "))
+    fatura.append([produto,preco])
+    continua_compra = input("Você deseja mais alguma coisa? (s/n)")
+    total += preco
+    if continua_compra == 'n':
+        break
+    else:
+        continue
+
+for i in fatura:
+    print(i[0],'-',i[1])
+
+print('Valor total - ', total)

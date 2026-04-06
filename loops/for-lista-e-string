@@ -1,0 +1,8 @@
+compras = ['milho', 'iogurte', 'patinho', 'leite']
+nome = 'eduardo'
+
+for i in compras:
+    print(i)
+
+for j in nome:
+    print(j)

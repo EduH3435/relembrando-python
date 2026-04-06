@@ -1,0 +1,4 @@
+cores = {'verde' : 'green', 'azul' : 'blue', 'rosa' : 'pink'}
+
+for i in cores:
+    print(i,":",cores[i])

@@ -1,0 +1,8 @@
+compras_semana = [['leite', 'manteiga', 'pão'], ['chocolate', 'leite condensado']]
+
+for i in compras_semana:
+    print(i)
+
+for i in compras_semana:
+    for item in i:
+        print(item)

@@ -1,0 +1,9 @@
+x = 0
+pessoas = []
+
+while 'joao' not in pessoas:
+    nome = input("Qual o seu nome?: ")
+    pessoas.append(nome)
+    x += 1
+
+print(pessoas)
