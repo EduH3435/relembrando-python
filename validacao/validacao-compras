@@ -1,0 +1,40 @@
+fatura = []
+total = 0
+valid_preco = False
+
+while True:
+    produto = input("Nome do produto: ")
+
+## Validação ------------------------------------------------------------------------------------v
+
+    while valid_preco == False:
+
+        preco = input("Preço do produto: ")
+
+        try:
+            preco = float(preco)
+
+            if preco <= 0:
+                print("O valor precisa ser maior que 0.")
+            else:
+                valid_preco = True
+
+        except:
+            print("Digite um valor válido para o preço. Use '.' no lugar de vírgulas.")
+
+## Validação ------------------------------------------------------------------------------------^
+
+    fatura.append([produto,preco])
+    total += preco
+
+    continua_compra = input("Você deseja mais alguma coisa? (s/n)")
+    if continua_compra == 'n':
+        break
+    else:
+        valid_preco = False
+        continue
+
+for i in fatura:
+    print(i[0],'-',i[1])
+
+print('Valor total da fatura: ', total)
