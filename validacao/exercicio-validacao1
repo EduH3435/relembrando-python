@@ -1,0 +1,66 @@
+#INFORMAÇÕES AULA
+aulas_dadas = 20
+media = 6.0
+
+#INFORMAÇÕES ALUNO
+nome = input('Digite o nome do aluno: ')
+
+#VALIDAÇÃO NOTA P1 -----------------------------------------------------------v
+validar_nota = False
+while validar_nota == False:
+    notap1 = input('Digite a nota da P1 do aluno: ')
+    try:
+        notap1 = float(notap1)
+        if notap1 < 0 or notap1 > 10:
+            print('Nota inválida. O valor deve ser maior que 0 e menor que 10.')
+        else:
+            validar_nota = True
+    except:
+        print('Digitação inválida. Separe as casas decimais com "." ao invés de vírgulas.')
+#VALIDAÇÃO NOTA P1 -----------------------------------------------------------^
+
+
+#VALIDAÇÃO NOTA P2 -----------------------------------------------------------v
+validar_nota = False
+while validar_nota == False:
+    notap2 = input('Digite a nota da P2 do aluno: ')
+    try:
+        notap2 = float(notap2)
+        if notap2 < 0 or notap2 > 10:
+            print('Nota inválida. O valor deve ser maior que 0 e menor que 10.')
+        else:
+            validar_nota = True
+    except:
+        print('Digitação inválida. Separe as casas decimais com "." ao invés de vírgulas.')
+#VALIDAÇÃO NOTA P2 ------------------------------------------------------------^
+
+
+media_aluno = (notap1 + notap2) / 2
+
+
+#VALIDAÇÃO FALTAS -----------------------------------------------------------v
+while True:
+    faltas = int(input('Digite o número de faltas do aluno: '))
+    if faltas < 0 or faltas > 20:
+        print('Número de faltas inválido. O valor deve ser maior que 0 e menor que 20.')
+    else:
+        presenca = aulas_dadas - faltas
+        break
+#VALIDAÇÃO FALTAS -----------------------------------------------------------^
+
+
+#IMPRIMINDO...
+print("Aluno: ", nome)
+print("Média: ", media_aluno)
+assiduidade = (presenca * 100) / aulas_dadas
+print("Presença: ", assiduidade, "%")
+
+#RESULTADO
+if media_aluno >= media and assiduidade >= 70:
+    print("Resultado: Aprovado")
+elif media_aluno >= media and assiduidade < 70:
+    print("Resultado: Reprovado por faltas")
+elif media_aluno < media and assiduidade >= 70:
+    print("Resultado: Reprovado por média")
+elif media_aluno < media and assiduidade < 70:
+    print("Resultado: Reprovado por faltas e média")
